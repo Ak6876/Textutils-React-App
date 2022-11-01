@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import Alert from "./Components/Alert";
-import About from "./Components/About";
+// import About from "./Components/About";
 import Navbar from "./Components/Navbar";
 import Textform from "./Components/Textform";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 import React from "react";
 function App() {
   const [mode, setMode] = useState('light');
@@ -37,18 +37,18 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar title="TextUtils" about="About Textutils" home="Home" mode={mode} togglemode={togglemode} />
         <Alert alert={alert} />
         <div className="container my-4">
-          <Routes>
+        <Textform Heading="Enter The Text To Analyze Below" mode={mode} showalert={showalert} />
+          {/* <Routes>
             <Route  exact path="/about" element={<About mode={mode} />}>
             </Route>
-            <Route path="/" element={<Textform Heading="Enter The Text To Analyze Below" mode={mode} showalert={showalert} />}>
             </Route>
-          </Routes>
+          </Routes> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
